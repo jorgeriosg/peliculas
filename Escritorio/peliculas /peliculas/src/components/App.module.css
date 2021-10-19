@@ -1,0 +1,30 @@
+.title{
+    text-align: center;
+    font-size: 5rem;
+    color: #fff;
+        margin-top: 5%;
+        text-shadow:
+            0 0 5px rgba(0,178,255,1),
+            0 0 10px rgba(0,178,255,1),
+            0 0 20px rgba(0,178,255,1),
+            0 0 40px rgba(38,104,127,1),
+            0 0 80px rgba(38,104,127,1),
+            0 0 90px rgba(38,104,127,1),
+            0 0 100px rgba(38,104,127,1),
+            0 0 140px rgba(38,104,127,1),
+            0 0 180px rgba(38,104,127,1);
+}
+
+.stars{
+    display: wrap;
+    text-align: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+@media(max-width: 560px){
+    .moviesGrid{
+        width: 100%;
+        height: auto;
+    }
+}
