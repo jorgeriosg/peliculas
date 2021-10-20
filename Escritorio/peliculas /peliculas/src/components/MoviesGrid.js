@@ -5,18 +5,20 @@ import styles from "./MoviesGrid.module.css";
 import { Spinner } from "./Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Empty } from "./Empty";
-
+// estados
 export function MoviesGrid({ search }) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-
+// efecto secundario
   useEffect(() => {
     setIsLoading(true);
+    //path
     const searchUrl = search
       ? "/search/movie?query=" + search + "&page=" + page
       : "/discover/movie?page=" + page;
+      // funcion consumo api
     get(searchUrl).then((data) => {
       setMovies((prevMovies) => prevMovies.concat(data.results));
       setHasMore(data.page < data.total_pages);
@@ -27,7 +29,7 @@ export function MoviesGrid({ search }) {
   if (!isLoading && movies.length === 0) {
     return <Empty />;
   }
-
+// scroll  infinito 
   return (
     <InfiniteScroll
       dataLength={movies.length}
